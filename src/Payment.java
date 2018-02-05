@@ -9,7 +9,7 @@ public abstract class Payment
 
     public abstract void makePayment(double amountPaid);
 
-    public double GetAmountDue()
+    public double getAmountDue()
     {
         return this.amountDue;
     }

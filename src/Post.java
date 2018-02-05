@@ -55,8 +55,8 @@ public class Post
     }
 
     /*
-    * Takes all of the customer's information and creates a receipt.
-    * @param The customer
+    * Takes all of the customer's information and creates a nicely formatted receipt.
+    * @param The customer being checked out.
     * @return none
     * */
     private void printReceipt(Customer customer)

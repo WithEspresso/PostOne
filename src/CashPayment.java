@@ -12,4 +12,10 @@ public class CashPayment extends Payment
     public void makePayment(double amountPaid)
     {
     }
+
+    @Override
+    public String toString()
+    {
+        return ("Amount Tendered: $" + super.getAmountDue());
+    }
 }

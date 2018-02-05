@@ -33,4 +33,15 @@ public class Item
         return this.quantity;
     }
 
+    public double getCostOfItems()
+    {
+        return this.quantity * this.price;
+    }
+
+    @Override
+    public String toString()
+    {
+        return (this.description + " @ " + this.quantity + " $" + this.price);
+    }
+
 }
