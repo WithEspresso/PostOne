@@ -40,7 +40,6 @@ public class Post
 
         if(!verifyPayment(customer.getPayment(), currentTransactionTotal))
             return false;
-
         return true;
     }
 

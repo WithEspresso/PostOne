@@ -3,14 +3,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-/*
-* I'm assuming Time will come as a String from the following code:
-* DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-* Date date = new Date();
-* System.out.println(dateFormat.format(date));
-*
-* */
-
 public class Receipt
 {
     private final String STORE_NAME = "Good Store";
@@ -42,8 +34,9 @@ public class Receipt
         return(dateFormat.format(date));
     }
 
-    /*
-    *
+    /* Prints the customer's receipt.
+    * @param none
+    * @return none
     * */
     public void printReceipt()
     {

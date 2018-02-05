@@ -4,6 +4,8 @@ public class Store
 {
     private HashMap inventory;
     private boolean isOpen;
+    int registersOn = 0;
+    double todaysRevenue = 0;
 
     public Store()
     {
