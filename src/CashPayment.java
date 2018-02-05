@@ -1,5 +1,8 @@
 public class CashPayment extends Payment
 {
+    /*
+    * For now, cash payments will always give the correct amount of change.
+    * */
     public CashPayment(double amountDue)
     {
         super(amountDue);
@@ -8,6 +11,5 @@ public class CashPayment extends Payment
     @Override
     public void makePayment(double amountPaid)
     {
-        //TODO Implement cash payment method
     }
 }

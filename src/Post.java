@@ -6,7 +6,8 @@ public class Post
     private static int transactionNumber = 0;
 
     //Shouldn't this be an actual Queue?
-    private ArrayList<> customersInQueue;
+    private ArrayList customersInQueue;
+    private ArrayList receiptsProcessed;
 
     public Post()
     {
@@ -25,36 +26,61 @@ public class Post
     {
         if(customersInQueue.size() == 0)
             return false;
-        this.transactionNumber++;
+        transactionNumber++;
 
         Customer customer = (Customer)customersInQueue.remove(0);
         ArrayList<Item> shoppingCart = customer.getShoppingCart();
+        double currentTransactionTotal = 0;
+
         for(int i = 0; i < shoppingCart.size(); i++)
         {
-            shoppingCart.get(i).getPrice();
+            Item item = shoppingCart.get(0);
+            currentTransactionTotal += item.getPrice() * item.getQuantity();
         }
+
+        if(!verifyPayment(customer.getPayment(), currentTransactionTotal))
+            return false;
+
+        return true;
     }
 
     /*
     *
-    * @param
+    * @param A Customer to add to this post's queue
+    * @return none
     * */
     public void addCustomerToQueue(Customer customer)
     {
         this.customersInQueue.add(customer);
     }
 
-    public void printReceipt()
+    /*
+    * Takes all of the customer's information and creates a receipt.
+    * @param The customer
+    * @return none
+    * */
+    private void printReceipt(Customer customer)
     {
-        //TODO Print the receipts of all of the customers
+        Receipt receipt = new Receipt(customer);
+        receipt.printReceipt();
     }
 
-    private void makeReceipt(customer)
+    /*
+    * This function will assume that 10% of the credit card
+    * payments are declined in the future.
+    * @param A Payment to verify
+    * @return true if the payment went through, false otherwise.
+    * */
+    private boolean verifyPayment(Payment payment, double total)
     {
-
+        return true;
     }
 
-    public double getDollarsReceived()
+    /*
+    * @param none
+    * @return The total dollars processed through this post.
+    * */
+    public static double getDollarsReceived()
     {
         return dollarsReceived;
     }
